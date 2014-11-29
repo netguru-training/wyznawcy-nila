@@ -17,11 +17,13 @@
 
 
 @implementation EntriesManager
+- (NSArray*)entries {
+    if (!_entries) { _entries = @[]; }
+    return _entries;
+}
+
 
 - (void)add:(Entry *)entry {
-    if (!_entries) {
-        self.entries = @[];
-    }
     NSMutableArray *tempArray = [self.entries mutableCopy];
     [tempArray addObject:entry];
     self.entries = [tempArray copy];
