@@ -7,23 +7,25 @@
 //
 
 #import "ListTableViewController.h"
+#import "Entry.h"
+#import "EntriesManager.h"
 
 @interface ListTableViewController ()
 @property (strong, nonatomic) NSArray *tableData;
+@property (strong, nonatomic) EntriesManager *manager;
+
 @end
 
 @implementation ListTableViewController
-- (NSArray *)tableData {
-    if (!_tableData) {
-        self.tableData = @[];
-    }
-    return _tableData;
-}
 
 - (void)addRow: (NSString *) rowName {
-    NSMutableArray *copy = [self.tableData mutableCopy];
-    [copy addObject:rowName];
-    self.tableData = [copy copy];
+    if (!_manager) {
+    
+        self.manager = [EntriesManager alloc];
+    }
+    
+    Entry *newEntry = [[Entry alloc] initWithBody:rowName user:@"user"];
+    [self.manager add:newEntry];
     [self.tableView reloadData];
 }
 
@@ -45,15 +47,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.tableData count];
+    return [self.manager.entries count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"tableViewCell";
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
-    
-    cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
+    Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
+    cell.textLabel.text = entry.body;
     
     return cell;
 }
