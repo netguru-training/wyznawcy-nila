@@ -11,18 +11,14 @@
 #import "AddViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation ViewController
-- (IBAction)ItemButton:(id)sender {
-    [self.tableController addRow:self.textField.text];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"asdf"])
+    if ([[segue identifier] isEqualToString:@"listView"])
     {
         // Get reference to the destination view controller
         self.tableController = [segue destinationViewController];
