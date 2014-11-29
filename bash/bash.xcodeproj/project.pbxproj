@@ -14,6 +14,8 @@
 		9A005FB21A29CBA200C9981B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A005FB11A29CBA200C9981B /* Images.xcassets */; };
 		9A005FB51A29CBA200C9981B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A005FB31A29CBA200C9981B /* LaunchScreen.xib */; };
 		9A005FC11A29CBA300C9981B /* bashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A005FC01A29CBA300C9981B /* bashTests.m */; };
+		AD1CA0D91A29E51000AAB13E /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */; };
+		AD1CA0DC1A29F4DF00AAB13E /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		9A005FBA1A29CBA300C9981B /* bashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A005FBF1A29CBA300C9981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A005FC01A29CBA300C9981B /* bashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bashTests.m; sourceTree = "<group>"; };
+		AD1CA0D71A29E51000AAB13E /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
+		AD1CA0DA1A29F4DF00AAB13E /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 				9A005FB11A29CBA200C9981B /* Images.xcassets */,
 				9A005FB31A29CBA200C9981B /* LaunchScreen.xib */,
 				9A005FA41A29CBA200C9981B /* Supporting Files */,
+				AD1CA0D71A29E51000AAB13E /* ListTableViewController.h */,
+				AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */,
+				AD1CA0DA1A29F4DF00AAB13E /* AddViewController.h */,
+				AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */,
 			);
 			path = bash;
 			sourceTree = "<group>";
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1CA0DC1A29F4DF00AAB13E /* AddViewController.m in Sources */,
 				9A005FAD1A29CBA200C9981B /* ViewController.m in Sources */,
 				9A005FAA1A29CBA200C9981B /* AppDelegate.m in Sources */,
 				9A005FA71A29CBA200C9981B /* main.m in Sources */,
+				AD1CA0D91A29E51000AAB13E /* ListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				9A005FC61A29CBA300C9981B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A005FC71A29CBA300C9981B /* Build configuration list for PBXNativeTarget "bashTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				9A005FC91A29CBA300C9981B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
