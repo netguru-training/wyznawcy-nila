@@ -83,8 +83,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86l-OZ-jE7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-kV-sEL">
+                                <rect key="frame" x="10" y="10" width="580" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="hp4-kV-sEL" secondAttribute="bottom" constant="10" id="Gkx-8j-5wh"/>
+                            <constraint firstItem="hp4-kV-sEL" firstAttribute="leading" secondItem="1vu-88-iWj" secondAttribute="leading" constant="10" id="HNn-no-i7V"/>
+                            <constraint firstAttribute="trailing" secondItem="hp4-kV-sEL" secondAttribute="trailing" constant="10" id="LRY-VW-lvg"/>
+                            <constraint firstItem="hp4-kV-sEL" firstAttribute="top" secondItem="1vu-88-iWj" secondAttribute="top" constant="10" id="t7H-vF-oCw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pXE-NU-hjY">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zSE-Tu-cFO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="86l-OZ-jE7">
                                 <rect key="frame" x="318" y="114" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -92,17 +110,10 @@
                                     <action selector="addTap:" destination="WTB-7f-xA9" eventType="touchUpInside" id="6EZ-PY-bKu"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3UJ-VH-iCl">
-                                <rect key="frame" x="50" y="114" width="219" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="pXE-NU-hjY"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="rowText" destination="3UJ-VH-iCl" id="sT4-ss-nsK"/>
+                        <outlet property="bodyText" destination="hp4-kV-sEL" id="pv9-lp-jxJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jz-Fk-kVY" userLabel="First Responder" sceneMemberID="firstResponder"/>

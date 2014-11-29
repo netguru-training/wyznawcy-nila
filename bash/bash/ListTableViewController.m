@@ -18,15 +18,13 @@
 
 @implementation ListTableViewController
 
-- (void)addRow: (NSString *) rowName {
+- (void)addEntry:(NSString *)body {
     if (!_manager) {
-    
         self.manager = [EntriesManager alloc];
     }
     
-    Entry *newEntry = [[Entry alloc] initWithBody:rowName user:@"user"];
+    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user"];
     [self.manager add:newEntry];
-    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {

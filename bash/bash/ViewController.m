@@ -26,7 +26,6 @@
     
     if ([[segue identifier] isEqualToString:@"addView"])
     {
-        NSLog(@"fdasfasd");
         // Get reference to the destination view controller
         AddViewController *addViewController = [segue destinationViewController];
         addViewController.tableController = self.tableController;

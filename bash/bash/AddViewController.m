@@ -9,15 +9,21 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
-
-@property (weak, nonatomic) IBOutlet UITextField *rowText;
+@property (weak, nonatomic) IBOutlet UITextView *bodyText;
 @property (weak, nonatomic) ViewController *viewController;
 @end
 
 @implementation AddViewController
 - (IBAction)addTap:(id)sender {
-    [self.tableController addRow:self.rowText.text];
+    if (self.bodyText.text.length == 0) {
+        [[[UIAlertView alloc] initWithTitle:@"Entry text" message: @"Please write text before adding a new element.\nFor instance 'dupa'" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil, nil] show];
+        return;
+    }
+    [self.tableController addEntry:self.bodyText.text];
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    // do nothing!
 }
 
 - (void)viewDidLoad {
