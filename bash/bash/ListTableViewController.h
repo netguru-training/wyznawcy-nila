@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ListTableViewController : UITableViewController
-- (void)addRow: (NSString *) rowName;
+- (void)addEntry: (NSString *) body;
 @end

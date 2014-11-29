@@ -20,9 +20,9 @@
     return _tableData;
 }
 
-- (void)addRow: (NSString *) rowName {
+- (void)addEntry:(NSString *)body {
     NSMutableArray *copy = [self.tableData mutableCopy];
-    [copy addObject:rowName];
+    [copy addObject:body];
     self.tableData = [copy copy];
     [self.tableView reloadData];
 }

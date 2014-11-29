@@ -9,14 +9,13 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
-
-@property (weak, nonatomic) IBOutlet UITextField *rowText;
+@property (weak, nonatomic) IBOutlet UITextView *bodyText;
 @property (weak, nonatomic) ViewController *viewController;
 @end
 
 @implementation AddViewController
 - (IBAction)addTap:(id)sender {
-    [self.tableController addRow:self.rowText.text];
+    [self.tableController addEntry:self.bodyText.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
