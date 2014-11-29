@@ -9,6 +9,9 @@
 #import "ListTableViewController.h"
 #import "Entry.h"
 #import "EntriesManager.h"
+=======
+#import <MessageUI/MessageUI.h>
+>>>>>>> basic sharing by email after long press
 
 @interface ListTableViewController ()
 @property (strong, nonatomic) NSArray *tableData;
@@ -25,6 +28,23 @@
     
     Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user"];
     [self.manager add:newEntry];
+}
+
+- (void)showMenu {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Share"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    __weak typeof(self) weakSelf = self;
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"By email" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              [weakSelf displayComposerSheet];
+                                                          }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * action) {}];
+    [alert addAction:defaultAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -48,14 +68,40 @@
     return [self.manager.entries count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (ListTableItemTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"tableViewCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+    ListTableItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
     cell.textLabel.text = entry.body;
+    cell.delegate = self;
     
     return cell;
+}
+
+-(void)displayComposerSheet {
+    if (![MFMailComposeViewController canSendMail]) {
+        return;
+    }
+    
+    MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+    picker.mailComposeDelegate = self;
+    
+    [picker setSubject:@"Here's a cool BashGuru link for you!"];
+    
+    // Fill out the email body text.
+    NSString *emailBody = @"It is raining in sunny California!";
+    [picker setMessageBody:emailBody isHTML:NO];
+    
+    // Present the mail composition interface.
+    [self presentViewController:picker animated:YES completion:nil];
+}
+
+// The mail compose view controller delegate method
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
