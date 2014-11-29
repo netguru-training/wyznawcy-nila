@@ -9,14 +9,11 @@
 #import "ListTableViewController.h"
 #import "Entry.h"
 #import "EntriesManager.h"
-=======
 #import <MessageUI/MessageUI.h>
->>>>>>> basic sharing by email after long press
 
 @interface ListTableViewController ()
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) EntriesManager *manager;
-
 @end
 
 @implementation ListTableViewController
