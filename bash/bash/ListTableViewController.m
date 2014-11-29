@@ -21,6 +21,7 @@
 }
 
 - (void)addEntry:(NSString *)body {
+    if (body.length == 0) { return; }
     NSMutableArray *copy = [self.tableData mutableCopy];
     [copy addObject:body];
     self.tableData = [copy copy];
