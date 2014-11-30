@@ -10,7 +10,7 @@
 #import "ListTableViewController.h"
 #import "AddViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <ListTableViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -25,6 +25,7 @@
     {
         // Get reference to the destination view controller
         self.tableController = [segue destinationViewController];
+        self.tableController.delegate = self;
     }
     
     if ([[segue identifier] isEqualToString:@"addView"])
@@ -45,4 +46,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) tableViewDidSelectEntry:(Entry *)entry {
+    [self performSegueWithIdentifier:@"showDetails" sender:entry];
+}
 @end

@@ -151,6 +151,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     return [UIView new];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
+    [self.delegate tableViewDidSelectEntry:entry];
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

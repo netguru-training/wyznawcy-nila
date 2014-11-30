@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ListTableViewCell.h"
 
+@protocol ListTableViewControllerDelegate <NSObject>
+- (void) tableViewDidSelectEntry:(Entry *)entry;
+@end
+
 @interface ListTableViewController : UITableViewController
 - (void)addEntry: (NSString *)body user:(NSString *)user;
+@property (weak) id <ListTableViewControllerDelegate> delegate;
 @end
