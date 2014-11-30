@@ -33,14 +33,14 @@
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
+    UIAlertAction* shareMailAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               [weakSelf displayComposerSheet:bashBody];
                                                           }];
 
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
-    [alert addAction:defaultAction];
+    [alert addAction:shareMailAction];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
