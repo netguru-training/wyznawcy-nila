@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
 
 @interface ShowViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *entryScoreLabel;
+@property (weak, nonatomic) IBOutlet UITextView *entryBodyTextView;
+@property Entry *entry;
 @end

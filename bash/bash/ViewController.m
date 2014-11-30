@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ListTableViewController.h"
 #import "AddViewController.h"
+#import "ShowViewController.h"
 
 @interface ViewController () <ListTableViewControllerDelegate>
 
@@ -33,6 +34,13 @@
         // Get reference to the destination view controller
         AddViewController *addViewController = [segue destinationViewController];
         addViewController.tableController = self.tableController;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"showDetails"])
+    {
+        // Get reference to the destination view controller
+        ShowViewController *showViewController = [segue destinationViewController];
+        showViewController.entry = (Entry *)sender;
     }
 }
 

@@ -19,6 +19,12 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.userNameLabel.text = self.entry.user;
+    self.entryScoreLabel.text = [NSString stringWithFormat:@"%ld", (long)self.entry.score];
+    self.entryBodyTextView.text = self.entry.body;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
