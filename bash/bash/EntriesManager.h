@@ -14,5 +14,7 @@
 @property (nonatomic, strong, readonly) NSArray *entries;
 
 - (void)add:(Entry *)attributes;
+- (void)remove:(Entry *)entry;
+- (void)removeAtIndex:(NSInteger)eIndex;
 
 @end

@@ -22,7 +22,6 @@
     return _entries;
 }
 
-
 - (void)add:(Entry *)entry {
     NSMutableArray *tempArray = [self.entries mutableCopy];
     [tempArray addObject:entry];
@@ -30,8 +29,13 @@
 }
 
 - (void)remove:(Entry *)entry {
+    NSUInteger index = [self.entries indexOfObject:entry];
+    [self removeAtIndex:index];
+}
+
+- (void)removeAtIndex:(NSInteger)eIndex {
     NSMutableArray *tempArray = [self.entries mutableCopy];
-    [tempArray removeObject:entry];
+    [tempArray removeObjectAtIndex:eIndex];
     self.entries = [tempArray copy];
 }
 
