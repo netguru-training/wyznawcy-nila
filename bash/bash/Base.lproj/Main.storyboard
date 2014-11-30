@@ -5,6 +5,50 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--O nas-->
+        <scene sceneID="bPy-oJ-P68">
+            <objects>
+                <viewController id="9bI-vk-6sr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ibu-NC-ghA"/>
+                        <viewControllerLayoutGuide type="bottom" id="exN-at-YKf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bBV-27-npa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_1111" translatesAutoresizingMaskIntoConstraints="NO" id="YFM-k8-kOV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="461"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="461" id="W73-DA-KKY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO MY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo8-lb-NQu">
+                                <rect key="frame" x="16" y="469" width="568" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="Gw1-lx-Qga"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" red="1" green="0.2784313725" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="0.26274509800000001" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YFM-k8-kOV" secondAttribute="trailing" id="65w-vi-SAs"/>
+                            <constraint firstItem="wo8-lb-NQu" firstAttribute="leading" secondItem="bBV-27-npa" secondAttribute="leadingMargin" id="DgZ-CE-0i2"/>
+                            <constraint firstItem="wo8-lb-NQu" firstAttribute="top" secondItem="YFM-k8-kOV" secondAttribute="bottom" constant="8" symbolic="YES" id="Tgq-kn-q7j"/>
+                            <constraint firstItem="wo8-lb-NQu" firstAttribute="centerX" secondItem="YFM-k8-kOV" secondAttribute="centerX" id="Wv8-ol-Du9"/>
+                            <constraint firstItem="YFM-k8-kOV" firstAttribute="leading" secondItem="bBV-27-npa" secondAttribute="leading" id="cNd-Dy-S6S"/>
+                            <constraint firstItem="YFM-k8-kOV" firstAttribute="top" secondItem="bBV-27-npa" secondAttribute="top" id="ho8-9e-VsR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="O nas" id="YwN-1x-API"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MWW-J1-Lvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="-1415"/>
+        </scene>
         <!--Index-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -45,7 +89,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="HZ2-LI-kbT"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Obczaj to gówno" id="N6J-s1-dWG">
+                        <barButtonItem key="leftBarButtonItem" title="O nas" id="HLB-z8-dyx">
+                            <connections>
+                                <segue destination="9bI-vk-6sr" kind="show" id="fBr-2a-PH3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQd-QL-iEI">
                             <connections>
                                 <action selector="AddViewTap:" destination="vXZ-lx-hvc" id="5mU-qh-Y92"/>
@@ -58,6 +110,7 @@
                         <outlet property="containerView" destination="8MT-cX-VP5" id="OHb-am-giD"/>
                         <segue destination="GcH-PZ-OVz" kind="show" identifier="showDetails" id="7He-au-bAe"/>
                     </connections>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,7 +261,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write something..." translatesAutoresizingMaskIntoConstraints="NO" id="hp4-kV-sEL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Write something..." translatesAutoresizingMaskIntoConstraints="NO" id="hp4-kV-sEL">
                                 <rect key="frame" x="10" y="110" width="580" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -272,4 +325,7 @@
             <point key="canvasLocation" x="119" y="-557"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="IMG_1111" width="1280" height="960"/>
+    </resources>
 </document>
