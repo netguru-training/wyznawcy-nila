@@ -24,7 +24,7 @@
         self.manager = [EntriesManager alloc];
     }
     
-    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user"];
+    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user" score:0];
     [self.manager add:newEntry];
 }
 
