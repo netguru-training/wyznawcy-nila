@@ -45,6 +45,15 @@
 }
 
 - (void)viewDidLoad {
+    if (!_manager) {
+        self.manager = [EntriesManager alloc];
+    }
+    NSURLSessionTask *task = [self.manager fetch:^(NSArray *posts, NSError *error) {
+        if (!error) {
+            [self.tableView reloadData];
+        }
+    }];
+
     [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

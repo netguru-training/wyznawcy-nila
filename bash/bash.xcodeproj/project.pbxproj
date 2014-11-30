@@ -18,6 +18,7 @@
 		AD1CA0D91A29E51000AAB13E /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */; };
 		AD1CA0DC1A29F4DF00AAB13E /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */; };
 		ADF0620A1A2A2F5900E65511 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF062091A2A2F5900E65511 /* ListTableViewCell.m */; };
+		EAEA09761A2B153E00B1CB90 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEA09751A2B153E00B1CB90 /* ApiClient.m */; };
 		EAF5E4E01A2A04DD0065DF4F /* EntriesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF5E4DD1A2A04DD0065DF4F /* EntriesManager.m */; };
 		EAF5E4E11A2A04DD0065DF4F /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF5E4DF1A2A04DD0065DF4F /* Entry.m */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,8 @@
 		AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		ADF062081A2A2F5900E65511 /* ListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		ADF062091A2A2F5900E65511 /* ListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
+		EAEA09741A2B153E00B1CB90 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
+		EAEA09751A2B153E00B1CB90 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 		EAF5E4DC1A2A04DD0065DF4F /* EntriesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntriesManager.h; sourceTree = "<group>"; };
 		EAF5E4DD1A2A04DD0065DF4F /* EntriesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntriesManager.m; sourceTree = "<group>"; };
 		EAF5E4DE1A2A04DD0065DF4F /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		9A005FA31A29CBA200C9981B /* bash */ = {
 			isa = PBXGroup;
 			children = (
+				EAEA09731A2B151500B1CB90 /* Networking Extensions */,
 				EAF5E4E21A2A04F60065DF4F /* models */,
 				9A005FA81A29CBA200C9981B /* AppDelegate.h */,
 				9A005FA91A29CBA200C9981B /* AppDelegate.m */,
@@ -163,6 +167,15 @@
 				9A005FBF1A29CBA300C9981B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EAEA09731A2B151500B1CB90 /* Networking Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAEA09741A2B153E00B1CB90 /* ApiClient.h */,
+				EAEA09751A2B153E00B1CB90 /* ApiClient.m */,
+			);
+			name = "Networking Extensions";
 			sourceTree = "<group>";
 		};
 		EAF5E4E21A2A04F60065DF4F /* models */ = {
@@ -311,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEA09761A2B153E00B1CB90 /* ApiClient.m in Sources */,
 				AD1CA0DC1A29F4DF00AAB13E /* AddViewController.m in Sources */,
 				9A005FAD1A29CBA200C9981B /* ViewController.m in Sources */,
 				EAF5E4E11A2A04DD0065DF4F /* Entry.m in Sources */,

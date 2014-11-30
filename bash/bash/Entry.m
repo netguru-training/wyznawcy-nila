@@ -11,7 +11,7 @@
 @implementation Entry
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
-    self = [self initWithBody: [attributes valueForKeyPath:@"user"] user:[attributes valueForKeyPath:@"body"]];
+    self = [self initWithBody: [attributes valueForKeyPath:@"body"] user:[attributes valueForKeyPath:@"user"]];
     return self;
 }
 
