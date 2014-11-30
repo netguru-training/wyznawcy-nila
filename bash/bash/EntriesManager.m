@@ -1,6 +1,7 @@
 #import "EntriesManager.h"
 #import "Entry.h"
 #import "ApiClient.h"
+#import "SlackNotifier.h"
 
 @interface EntriesManager()
 
@@ -15,16 +16,21 @@
     return _entries;
 }
 
-
 - (void)add:(Entry *)entry {
     NSMutableArray *tempArray = [self.entries mutableCopy];
     [tempArray addObject:entry];
+    [[[SlackNotifier alloc] init] notifyNewEntry:entry];
     self.entries = [tempArray copy];
 }
 
 - (void)remove:(Entry *)entry {
+    NSUInteger index = [self.entries indexOfObject:entry];
+    [self removeAtIndex:index];
+}
+
+- (void)removeAtIndex:(NSInteger)eIndex {
     NSMutableArray *tempArray = [self.entries mutableCopy];
-    [tempArray removeObject:entry];
+    [tempArray removeObjectAtIndex:eIndex];
     self.entries = [tempArray copy];
 }
 

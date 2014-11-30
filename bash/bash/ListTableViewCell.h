@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Entry.h"
+
 @protocol ListMenuProtocol <NSObject>
-- (void) showMenu;
+- (void) showMenu:(NSString *)bashBody;
 @end
 
 @interface ListTableViewCell : UITableViewCell
 @property id <ListMenuProtocol> delegate;
+@property (strong, nonatomic) Entry *entry;
 @end

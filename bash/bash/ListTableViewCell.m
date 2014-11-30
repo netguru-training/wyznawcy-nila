@@ -17,7 +17,7 @@
 
 - (IBAction)cellLongPress:(UILongPressGestureRecognizer *)caller {
     if (caller.state == UIGestureRecognizerStateBegan) {
-        [self.delegate showMenu];
+        [self.delegate showMenu:self.entry.body];
     }
 }
 

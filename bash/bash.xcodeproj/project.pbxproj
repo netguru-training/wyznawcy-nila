@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98FB23921A2B1ABB009E75B1 /* SlackNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 98FB23911A2B1ABB009E75B1 /* SlackNotifier.m */; };
 		9A005FA71A29CBA200C9981B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A005FA61A29CBA200C9981B /* main.m */; };
 		9A005FAA1A29CBA200C9981B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A005FA91A29CBA200C9981B /* AppDelegate.m */; };
 		9A005FAD1A29CBA200C9981B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A005FAC1A29CBA200C9981B /* ViewController.m */; };
@@ -37,6 +38,8 @@
 		44BAC42AA409F36A8E56DAEC /* libPods-bash.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bash.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74576E4F83D7F883249B290C /* Pods-bash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bash/Pods-bash.debug.xcconfig"; sourceTree = "<group>"; };
 		96261C57A4132F1BDAD46726 /* Pods-bash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bash.release.xcconfig"; path = "Pods/Target Support Files/Pods-bash/Pods-bash.release.xcconfig"; sourceTree = "<group>"; };
+		98FB23901A2B1ABB009E75B1 /* SlackNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlackNotifier.h; sourceTree = "<group>"; };
+		98FB23911A2B1ABB009E75B1 /* SlackNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlackNotifier.m; sourceTree = "<group>"; };
 		9A005FA11A29CBA200C9981B /* bash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A005FA51A29CBA200C9981B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A005FA61A29CBA200C9981B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +103,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		98FB238E1A2B1A2F009E75B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD1CA0D71A29E51000AAB13E /* ListTableViewController.h */,
+				AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */,
+				AD1CA0DA1A29F4DF00AAB13E /* AddViewController.h */,
+				AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */,
+				ADF062081A2A2F5900E65511 /* ListTableViewCell.h */,
+				ADF062091A2A2F5900E65511 /* ListTableViewCell.m */,
+				9A005FAB1A29CBA200C9981B /* ViewController.h */,
+				9A005FAC1A29CBA200C9981B /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		98FB238F1A2B1A80009E75B1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				98FB23901A2B1ABB009E75B1 /* SlackNotifier.h */,
+				98FB23911A2B1ABB009E75B1 /* SlackNotifier.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		9A005F981A29CBA200C9981B = {
 			isa = PBXGroup;
 			children = (
@@ -124,21 +151,15 @@
 			isa = PBXGroup;
 			children = (
 				EAEA09731A2B151500B1CB90 /* Networking Extensions */,
-				EAF5E4E21A2A04F60065DF4F /* models */,
 				9A005FA81A29CBA200C9981B /* AppDelegate.h */,
 				9A005FA91A29CBA200C9981B /* AppDelegate.m */,
-				9A005FAB1A29CBA200C9981B /* ViewController.h */,
-				9A005FAC1A29CBA200C9981B /* ViewController.m */,
-				9A005FAE1A29CBA200C9981B /* Main.storyboard */,
 				9A005FB11A29CBA200C9981B /* Images.xcassets */,
 				9A005FB31A29CBA200C9981B /* LaunchScreen.xib */,
+				9A005FAE1A29CBA200C9981B /* Main.storyboard */,
+				98FB238E1A2B1A2F009E75B1 /* Controllers */,
+				EAF5E4E21A2A04F60065DF4F /* Models */,
+				98FB238F1A2B1A80009E75B1 /* Services */,
 				9A005FA41A29CBA200C9981B /* Supporting Files */,
-				AD1CA0D71A29E51000AAB13E /* ListTableViewController.h */,
-				AD1CA0D81A29E51000AAB13E /* ListTableViewController.m */,
-				AD1CA0DA1A29F4DF00AAB13E /* AddViewController.h */,
-				AD1CA0DB1A29F4DF00AAB13E /* AddViewController.m */,
-				ADF062081A2A2F5900E65511 /* ListTableViewCell.h */,
-				ADF062091A2A2F5900E65511 /* ListTableViewCell.m */,
 			);
 			path = bash;
 			sourceTree = "<group>";
@@ -178,7 +199,7 @@
 			name = "Networking Extensions";
 			sourceTree = "<group>";
 		};
-		EAF5E4E21A2A04F60065DF4F /* models */ = {
+		EAF5E4E21A2A04F60065DF4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EAF5E4DC1A2A04DD0065DF4F /* EntriesManager.h */,
@@ -186,7 +207,7 @@
 				EAF5E4DE1A2A04DD0065DF4F /* Entry.h */,
 				EAF5E4DF1A2A04DD0065DF4F /* Entry.m */,
 			);
-			name = models;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +261,7 @@
 				TargetAttributes = {
 					9A005FA01A29CBA200C9981B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = SK8PDF7SG9;
 					};
 					9A005FB91A29CBA300C9981B = {
 						CreatedOnToolsVersion = 6.1;
@@ -333,6 +355,7 @@
 				ADF0620A1A2A2F5900E65511 /* ListTableViewCell.m in Sources */,
 				9A005FA71A29CBA200C9981B /* main.m in Sources */,
 				AD1CA0D91A29E51000AAB13E /* ListTableViewController.m in Sources */,
+				98FB23921A2B1ABB009E75B1 /* SlackNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,9 +478,12 @@
 			baseConfigurationReference = 74576E4F83D7F883249B290C /* Pods-bash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -466,9 +492,12 @@
 			baseConfigurationReference = 96261C57A4132F1BDAD46726 /* Pods-bash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = bash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

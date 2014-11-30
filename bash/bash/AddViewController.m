@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.bodyText becomeFirstResponder];
     // Do any additional setup after loading the view.
 }
 

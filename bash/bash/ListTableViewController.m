@@ -10,8 +10,9 @@
 #import "Entry.h"
 #import "EntriesManager.h"
 #import <MessageUI/MessageUI.h>
+#import "ListTableViewCell.h"
 
-@interface ListTableViewController ()
+@interface ListTableViewController () <ListMenuProtocol>
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) EntriesManager *manager;
 @end
@@ -27,16 +28,17 @@
     [self.manager add:newEntry];
 }
 
-- (void)showMenu {
+- (void)showMenu:(NSString *)bashBody {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Share"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"By email" style:UIAlertActionStyleDefault
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                              [weakSelf displayComposerSheet];
+                                                              [weakSelf displayComposerSheet:bashBody];
                                                           }];
+
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
     [alert addAction:defaultAction];
@@ -67,6 +69,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)tableView:(UITableView*)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.manager removeAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -74,18 +87,19 @@
     return [self.manager.entries count];
 }
 
-- (ListTableItemTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (ListTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"tableViewCell";
 
-    ListTableItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+    ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
     cell.textLabel.text = entry.body;
     cell.delegate = self;
+    cell.entry = entry;
     
     return cell;
 }
 
--(void)displayComposerSheet {
+-(void)displayComposerSheet:(NSString *) bashBody {
     if (![MFMailComposeViewController canSendMail]) {
         return;
     }
@@ -96,8 +110,7 @@
     [picker setSubject:@"Here's a cool BashGuru link for you!"];
     
     // Fill out the email body text.
-    NSString *emailBody = @"It is raining in sunny California!";
-    [picker setMessageBody:emailBody isHTML:NO];
+    [picker setMessageBody:bashBody isHTML:NO];
     
     // Present the mail composition interface.
     [self presentViewController:picker animated:YES completion:nil];
