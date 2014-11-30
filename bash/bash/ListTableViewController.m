@@ -24,7 +24,7 @@
         self.manager = [EntriesManager alloc];
     }
     
-    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user"];
+    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user" score:0];
     [self.manager add:newEntry];
 }
 
@@ -92,7 +92,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
-    cell.textLabel.text = entry.body;
+    cell.cellBody.text = entry.body;
+    cell.cellScore.text = [NSString stringWithFormat:@"%li", (long)entry.score];
     cell.delegate = self;
     cell.entry = entry;
     
