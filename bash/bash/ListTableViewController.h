@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ListTableItemTableViewCell.h"
+#import "ListTableViewCell.h"
 
 @interface ListTableViewController : UITableViewController
 - (void)addEntry: (NSString *) body;

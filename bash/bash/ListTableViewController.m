@@ -10,6 +10,7 @@
 #import "Entry.h"
 #import "EntriesManager.h"
 #import <MessageUI/MessageUI.h>
+#import "ListTableViewCell.h"
 
 @interface ListTableViewController () <ListMenuProtocol>
 @property (strong, nonatomic) NSArray *tableData;
@@ -76,10 +77,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.manager.entries count];
 }
 
-- (ListTableItemTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (ListTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"tableViewCell";
 
-    ListTableItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+    ListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
     cell.textLabel.text = entry.body;
     cell.delegate = self;
