@@ -17,19 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MT-cX-VP5">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MT-cX-VP5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <segue destination="gVP-jB-zKS" kind="embed" identifier="listView" id="cw1-OW-j06"/>
                                 </connections>
                             </containerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fGR-gR-IKM">
+                                <rect key="frame" x="291" y="291" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8MT-cX-VP5" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="2wE-Ta-TdH"/>
                             <constraint firstItem="8MT-cX-VP5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7gT-DC-uEj"/>
+                            <constraint firstAttribute="centerX" secondItem="fGR-gR-IKM" secondAttribute="centerX" id="Pvl-qq-aGP"/>
                             <constraint firstItem="8MT-cX-VP5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="VEx-Gt-31l"/>
                             <constraint firstAttribute="trailing" secondItem="8MT-cX-VP5" secondAttribute="trailing" id="nhN-Ek-pOL"/>
+                            <constraint firstAttribute="centerY" secondItem="fGR-gR-IKM" secondAttribute="centerY" id="pjo-xw-UMi"/>
                             <constraint firstAttribute="bottomMargin" secondItem="8MT-cX-VP5" secondAttribute="bottom" id="sfA-h8-jlD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8MT-cX-VP5" secondAttribute="trailing" id="sts-Cf-38W"/>
                         </constraints>
@@ -48,6 +53,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="fGR-gR-IKM" id="GVm-fW-LK6"/>
+                        <outlet property="containerView" destination="8MT-cX-VP5" id="OHb-am-giD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

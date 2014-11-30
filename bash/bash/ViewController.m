@@ -10,7 +10,12 @@
 #import "ListTableViewController.h"
 #import "AddViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <ListTableLoadedProtocol>
+
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+- (void)tableLoaded;
 
 @end
 
