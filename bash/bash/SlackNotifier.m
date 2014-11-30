@@ -17,7 +17,7 @@ NSString * const SlackAvatarURL = @"https://avatars3.githubusercontent.com/u/574
 @implementation SlackNotifier
 
 - (BOOL)notifyNewEntry:(Entry *)entry {
-    NSString *message = [NSString stringWithFormat:@"@channel: New quote: _%@..._ (<%@|more>)", entry.body, BackendEntriesURL];
+    NSString *message = [NSString stringWithFormat:@"New quote: _%@..._ (<%@|more>)", entry.body, BackendEntriesURL];
     NSURL *hostURL = [NSURL URLWithString:SlackEndpointHost];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     [parameters setObject:@"Bash" forKey:@"username"];
