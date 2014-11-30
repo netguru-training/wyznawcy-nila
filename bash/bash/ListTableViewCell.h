@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Entry.h"
 
+@class ListTableViewCell;
+
 @protocol ListMenuProtocol <NSObject>
-- (void) showMenu:(Entry *)entry;
+- (void)showMenu:(Entry *)entry cell:(ListTableViewCell *)cell;
 @end
 
 @interface ListTableViewCell : UITableViewCell

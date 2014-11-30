@@ -15,9 +15,18 @@
 @interface ListTableViewController () <ListMenuProtocol>
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) EntriesManager *manager;
+
+- (void)updateCell:(ListTableViewCell *)cell;
 @end
 
 @implementation ListTableViewController
+
+- (void)updateCell:(ListTableViewCell *)cell {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    [self.tableView beginUpdates];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+}
 
 - (void)addEntry:(NSString *)body user:(NSString *)user {
     if (!_manager) {
@@ -27,7 +36,7 @@
     [self.manager add:newEntry];
 }
 
-- (void)showMenu:(Entry *)entry {
+- (void)showMenu:(Entry *)entry cell:(ListTableViewCell *)cell {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
@@ -44,12 +53,12 @@
     UIAlertAction* upvoteAction = [UIAlertAction actionWithTitle:@"Upvote" style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * action) {
                                                                 [entry upvote];
-                                                                [weakSelf.tableView reloadData];
+                                                                [weakSelf updateCell:cell];
                                                             }];
     UIAlertAction* downvoteAction = [UIAlertAction actionWithTitle:@"Downvote" style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action) {
                                                              [entry downvote];
-                                                             [weakSelf.tableView reloadData];
+                                                             [weakSelf updateCell:cell];
                                                          }];
     [alert addAction:upvoteAction];
     [alert addAction:downvoteAction];
