@@ -6,7 +6,7 @@
 @property (nonatomic, strong, readonly) NSArray *entries;
 
 - (NSURLSessionDataTask *)fetch:(void (^)(NSArray *posts, NSError *error))block;
-- (void)add:(Entry *)attributes;
+- (NSURLSessionDataTask *)add:(Entry *)entry completion:(void (^)(NSArray *posts, NSError *error))block;
 - (void)remove:(Entry *)entry;
 - (void)removeAtIndex:(NSInteger)eIndex;
 

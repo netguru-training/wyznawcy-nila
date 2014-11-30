@@ -33,8 +33,22 @@
     if (!_manager) {
         self.manager = [EntriesManager alloc];
     }
+    __weak typeof(self) weakSelf = self;
     Entry *newEntry = [[Entry alloc] initWithBody:body user:user score:0];
-    [self.manager add:newEntry];
+    [self.manager add:newEntry completion:^(NSArray *entry, NSError *error) {
+        if (!error) {
+            [weakSelf.tableView reloadData];
+        }
+        else{
+            [[[UIAlertView alloc] initWithTitle:@"ty baranie!"
+                                        message:@"nasze api tego nie ogarnia..."
+                                       delegate:nil
+                              cancelButtonTitle:@"Ok"
+                              otherButtonTitles:nil, nil
+              ]
+             show];
+        }
+    }];
 }
 
 - (void)showMenu:(Entry *)entry cell:(ListTableViewCell *)cell {

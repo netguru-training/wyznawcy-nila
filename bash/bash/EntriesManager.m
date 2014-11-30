@@ -16,11 +16,31 @@
     return _entries;
 }
 
-- (void)add:(Entry *)entry {
+- (NSURLSessionDataTask *)add:(Entry *)entry  completion:(void (^)(NSArray *entries, NSError *error))block {
+    NSString *user_name = entry.user ? entry.user : @"";
+    NSString *body = entry.body ? entry.body : @"";
+    
+    NSDictionary *parameters = @{
+                                 @"entry": @{
+                                            @"user_name": user_name,
+                                            @"body": body
+                                            }
+                                };
     NSMutableArray *tempArray = [self.entries mutableCopy];
     [tempArray addObject:entry];
     [[[SlackNotifier alloc] init] notifyNewEntry:entry];
     self.entries = [tempArray copy];
+    return [[ApiClient sharedClient] POST:@"/entrifes.json" parameters:parameters success:^(NSURLSessionDataTask * __unused task, id JSON) {
+        NSArray *entryFromResponse = JSON;
+        
+        if (block) {
+            block(self.entries, nil);
+        }
+    } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        if (block) {
+            block([NSArray array], error);
+        }
+    }];
 }
 
 - (void)remove:(Entry *)entry {
