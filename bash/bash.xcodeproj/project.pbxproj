@@ -22,7 +22,6 @@
 		ADF0620A1A2A2F5900E65511 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF062091A2A2F5900E65511 /* ListTableViewCell.m */; };
 		ADFF0C481A2B601C002E6E18 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFF0C471A2B601C002E6E18 /* QuartzCore.framework */; };
 		EAEA09761A2B153E00B1CB90 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEA09751A2B153E00B1CB90 /* ApiClient.m */; };
-		EAEA09781A2B6A4200B1CB90 /* uncool.png in Resources */ = {isa = PBXBuildFile; fileRef = EAEA09771A2B6A4200B1CB90 /* uncool.png */; };
 		EAF5E4E01A2A04DD0065DF4F /* EntriesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF5E4DD1A2A04DD0065DF4F /* EntriesManager.m */; };
 		EAF5E4E11A2A04DD0065DF4F /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF5E4DF1A2A04DD0065DF4F /* Entry.m */; };
 /* End PBXBuildFile section */
@@ -67,7 +66,6 @@
 		ADFF0C471A2B601C002E6E18 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EAEA09741A2B153E00B1CB90 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
 		EAEA09751A2B153E00B1CB90 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
-		EAEA09771A2B6A4200B1CB90 /* uncool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uncool.png; path = ../../../../Desktop/uncool.png; sourceTree = "<group>"; };
 		EAF5E4DC1A2A04DD0065DF4F /* EntriesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntriesManager.h; sourceTree = "<group>"; };
 		EAF5E4DD1A2A04DD0065DF4F /* EntriesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntriesManager.m; sourceTree = "<group>"; };
 		EAF5E4DE1A2A04DD0065DF4F /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				9A005FA81A29CBA200C9981B /* AppDelegate.h */,
 				9A005FA91A29CBA200C9981B /* AppDelegate.m */,
 				9A005FB11A29CBA200C9981B /* Images.xcassets */,
-				EAEA09771A2B6A4200B1CB90 /* uncool.png */,
 				9A005FB31A29CBA200C9981B /* LaunchScreen.xib */,
 				9A005FAE1A29CBA200C9981B /* Main.storyboard */,
 				98FB238E1A2B1A2F009E75B1 /* Controllers */,
@@ -313,7 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAEA09781A2B6A4200B1CB90 /* uncool.png in Resources */,
 				9A005FB01A29CBA200C9981B /* Main.storyboard in Resources */,
 				9A005FB51A29CBA200C9981B /* LaunchScreen.xib in Resources */,
 				9A005FB21A29CBA200C9981B /* Images.xcassets in Resources */,
