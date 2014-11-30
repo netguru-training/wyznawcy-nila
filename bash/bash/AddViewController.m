@@ -17,13 +17,22 @@
 @implementation AddViewController
 - (IBAction)addTap:(id)sender {
     if (self.bodyText.text.length == 0) {
-        [[[UIAlertView alloc] initWithTitle:@"Entry text"
-                                    message:@"Please write text before adding a new element.\nFor instance 'dupa'"
-                                   delegate:nil
-                          cancelButtonTitle:@"Ok"
-                          otherButtonTitles:nil, nil
-          ]
-         show];
+        
+        
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Uncool!"
+                                                        message:@"Please write text before adding a new element.\nFor instance 'dupa'"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"ok"
+                                              otherButtonTitles:nil, nil];
+        
+        UIImage* imgMyImage = [UIImage imageNamed:@"uncool.png"];
+        UIImageView* ivMyImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, imgMyImage.size.width, imgMyImage.size.height)];
+        [ivMyImageView setImage:imgMyImage];
+        
+        [alert setValue: ivMyImageView forKey:@"accessoryView"];
+        [alert show];
+        
+        
         return;
     }
     [self.tableController addEntry:self.bodyText.text user:self.userName.text];
@@ -53,5 +62,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
