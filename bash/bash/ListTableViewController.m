@@ -11,8 +11,9 @@
 #import "EntriesManager.h"
 #import <MessageUI/MessageUI.h>
 #import "ListTableViewCell.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ListTableViewController () <ListMenuProtocol>
+@interface ListTableViewController () <ListMenuProtocol, MFMailComposeViewControllerDelegate>
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) EntriesManager *manager;
 
