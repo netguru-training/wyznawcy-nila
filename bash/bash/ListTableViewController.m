@@ -33,7 +33,7 @@
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"By email" style:UIAlertActionStyleDefault
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
                                                               [weakSelf displayComposerSheet];
                                                           }];
