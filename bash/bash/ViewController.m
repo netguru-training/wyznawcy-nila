@@ -50,8 +50,12 @@
     [self performSegueWithIdentifier:@"showDetails" sender:entry];
 }
 
-- (void) tableViewDidInitialFetch {
-    self.activityIndicator.hidden = YES;
+- (void) tableViewDidInitiateFetch {
+    [self.activityIndicator startAnimating];
+}
+
+- (void) tableViewDidFinishFetch {
+    [self.activityIndicator stopAnimating];
     self.containerView.hidden = NO;
 }
 @end

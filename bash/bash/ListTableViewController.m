@@ -87,9 +87,10 @@
         self.manager = [EntriesManager alloc];
     }
     [self.manager fetch:^(NSArray *posts, NSError *error) {
+        [self.delegate tableViewDidInitiateFetch];
         if (!error) {
             [self.tableView reloadData];
-            [self.delegate tableViewDidInitialFetch];
+            [self.delegate tableViewDidFinishFetch];
         }
     }];
 
