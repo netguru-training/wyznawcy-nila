@@ -68,39 +68,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B33-PC-nxo">
-                                            <rect key="frame" x="13" y="15" width="100" height="26"/>
+                                            <rect key="frame" x="13" y="9" width="100" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="83d-Bj-0SD"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kul-8X-S6o">
-                                            <rect key="frame" x="570" y="13" width="30" height="27"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="YfT-Qf-Kzz"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44S-ph-rzW">
-                                            <rect key="frame" x="113" y="9" width="457" height="30"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                            <rect key="frame" x="113" y="7" width="457" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kul-8X-S6o">
+                                            <rect key="frame" x="570" y="9" width="30" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="YfT-Qf-Kzz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="44S-ph-rzW" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="1" id="1Zp-Ey-zNk"/>
+                                        <constraint firstItem="44S-ph-rzW" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="-1" id="1Zp-Ey-zNk"/>
                                         <constraint firstItem="Kul-8X-S6o" firstAttribute="leading" secondItem="44S-ph-rzW" secondAttribute="trailing" id="6cZ-Bw-Hax"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="B33-PC-nxo" secondAttribute="bottom" constant="-6" id="6f9-Uc-9KB"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="44S-ph-rzW" secondAttribute="bottom" constant="-4" id="Cem-IK-gs0"/>
-                                        <constraint firstItem="Kul-8X-S6o" firstAttribute="baseline" secondItem="44S-ph-rzW" secondAttribute="baseline" id="D2S-8c-hIk"/>
-                                        <constraint firstItem="B33-PC-nxo" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="7" id="ObV-6Q-QYJ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="B33-PC-nxo" secondAttribute="bottom" id="6f9-Uc-9KB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="44S-ph-rzW" secondAttribute="bottom" constant="-2" id="Cem-IK-gs0"/>
+                                        <constraint firstItem="Kul-8X-S6o" firstAttribute="baseline" secondItem="44S-ph-rzW" secondAttribute="baseline" constant="-2" id="D2S-8c-hIk"/>
+                                        <constraint firstItem="B33-PC-nxo" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="1" id="ObV-6Q-QYJ"/>
                                         <constraint firstItem="44S-ph-rzW" firstAttribute="leading" secondItem="B33-PC-nxo" secondAttribute="trailing" id="Qed-r8-8sx"/>
                                         <constraint firstAttribute="trailing" secondItem="Kul-8X-S6o" secondAttribute="trailing" id="RIy-vc-fjL"/>
-                                        <constraint firstItem="Kul-8X-S6o" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="5" id="W8u-du-G9w"/>
+                                        <constraint firstItem="Kul-8X-S6o" firstAttribute="top" secondItem="cmc-tR-I7q" secondAttribute="topMargin" constant="1" id="W8u-du-G9w"/>
                                         <constraint firstAttribute="trailing" secondItem="Kul-8X-S6o" secondAttribute="trailing" constant="1" id="g4q-Db-vHa"/>
                                         <constraint firstItem="B33-PC-nxo" firstAttribute="leading" secondItem="cmc-tR-I7q" secondAttribute="leadingMargin" constant="5" id="n4d-Qh-F6b"/>
                                         <constraint firstAttribute="bottom" secondItem="Kul-8X-S6o" secondAttribute="bottom" constant="4" id="v7O-Uj-ziZ"/>
@@ -113,6 +113,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="cellBody" destination="44S-ph-rzW" id="UeS-Jc-yrS"/>
                                     <outlet property="cellScore" destination="Kul-8X-S6o" id="7W9-24-Qzt"/>
