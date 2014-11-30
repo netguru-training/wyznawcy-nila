@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 
 @interface AddViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextView *bodyText;
 @property (weak, nonatomic) ViewController *viewController;
 @end
@@ -19,7 +20,7 @@
         [[[UIAlertView alloc] initWithTitle:@"Entry text" message: @"Please write text before adding a new element.\nFor instance 'dupa'" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil, nil] show];
         return;
     }
-    [self.tableController addEntry:self.bodyText.text];
+    [self.tableController addEntry:self.bodyText.text user:self.userName.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

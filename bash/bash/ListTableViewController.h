@@ -10,5 +10,5 @@
 #import "ListTableViewCell.h"
 
 @interface ListTableViewController : UITableViewController
-- (void)addEntry: (NSString *) body;
+- (void)addEntry: (NSString *)body user:(NSString *)user;
 @end

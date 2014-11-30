@@ -19,12 +19,11 @@
 
 @implementation ListTableViewController
 
-- (void)addEntry:(NSString *)body {
+- (void)addEntry:(NSString *)body user:(NSString *)user {
     if (!_manager) {
         self.manager = [EntriesManager alloc];
     }
-    
-    Entry *newEntry = [[Entry alloc] initWithBody:body user:@"user" score:0];
+    Entry *newEntry = [[Entry alloc] initWithBody:body user:user score:0];
     [self.manager add:newEntry];
 }
 

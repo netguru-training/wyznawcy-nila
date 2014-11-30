@@ -128,8 +128,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-kV-sEL">
-                                <rect key="frame" x="10" y="10" width="580" height="580"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XhY-Un-bAD">
+                                <rect key="frame" x="10" y="74" width="580" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hp4-kV-sEL">
+                                <rect key="frame" x="10" y="110" width="580" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -137,10 +142,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="hp4-kV-sEL" secondAttribute="bottom" constant="10" id="Gkx-8j-5wh"/>
+                            <constraint firstItem="XhY-Un-bAD" firstAttribute="top" secondItem="1vu-88-iWj" secondAttribute="top" constant="74" id="9WP-FD-rmt"/>
+                            <constraint firstAttribute="trailing" secondItem="XhY-Un-bAD" secondAttribute="trailing" constant="10" id="AUi-rs-OQU"/>
                             <constraint firstItem="hp4-kV-sEL" firstAttribute="leading" secondItem="1vu-88-iWj" secondAttribute="leading" constant="10" id="HNn-no-i7V"/>
                             <constraint firstAttribute="trailing" secondItem="hp4-kV-sEL" secondAttribute="trailing" constant="10" id="LRY-VW-lvg"/>
-                            <constraint firstItem="hp4-kV-sEL" firstAttribute="top" secondItem="1vu-88-iWj" secondAttribute="top" constant="10" id="t7H-vF-oCw"/>
+                            <constraint firstItem="XhY-Un-bAD" firstAttribute="leading" secondItem="1vu-88-iWj" secondAttribute="leading" constant="10" id="Uxg-Dc-Udu"/>
+                            <constraint firstItem="hp4-kV-sEL" firstAttribute="top" secondItem="XhY-Un-bAD" secondAttribute="bottom" constant="5" id="b8h-d1-JnQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pXE-NU-hjY">
@@ -159,6 +166,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bodyText" destination="hp4-kV-sEL" id="pv9-lp-jxJ"/>
+                        <outlet property="userName" destination="XhY-Un-bAD" id="Aoy-5v-ap8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7jz-Fk-kVY" userLabel="First Responder" sceneMemberID="firstResponder"/>
