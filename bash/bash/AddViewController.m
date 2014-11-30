@@ -9,7 +9,7 @@
 #import "AddViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface AddViewController ()
+@interface AddViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextView *bodyText;
 @property (weak, nonatomic) ViewController *viewController;
@@ -30,6 +30,23 @@
     [self.tableController addEntry:self.bodyText.text user:self.userName.text];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"Write something..."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Write something...";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     // do nothing!
 }
@@ -42,6 +59,8 @@
 }
 
 - (void)styleBodyTextView {
+    self.bodyText.text = @"Write something...";
+    self.bodyText.textColor = [UIColor lightGrayColor]; //optional
     self.bodyText.layer.borderWidth = 1;
     self.bodyText.layer.borderColor = [UIColor colorWithRed:230.0f/255.0f green:230.0f/255.0f blue:230.0f/255.0f alpha:1.0f].CGColor;
     self.bodyText.layer.cornerRadius = 5;

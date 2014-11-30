@@ -159,6 +159,7 @@
 		9A005FA31A29CBA200C9981B /* bash */ = {
 			isa = PBXGroup;
 			children = (
+				ADFF0C491A2B63D3002E6E18 /* Views */,
 				EAEA09731A2B151500B1CB90 /* Networking Extensions */,
 				9A005FA81A29CBA200C9981B /* AppDelegate.h */,
 				9A005FA91A29CBA200C9981B /* AppDelegate.m */,
@@ -197,6 +198,13 @@
 				9A005FBF1A29CBA300C9981B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ADFF0C491A2B63D3002E6E18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EAEA09731A2B151500B1CB90 /* Networking Extensions */ = {
