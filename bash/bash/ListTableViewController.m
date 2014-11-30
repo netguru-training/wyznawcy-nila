@@ -75,6 +75,7 @@
     [self.manager fetch:^(NSArray *posts, NSError *error) {
         if (!error) {
             [self.tableView reloadData];
+            [self.delegate tableViewDidInitialFetch];
         }
     }];
 

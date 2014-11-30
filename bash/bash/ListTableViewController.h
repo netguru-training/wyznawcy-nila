@@ -11,6 +11,7 @@
 
 @protocol ListTableViewControllerDelegate <NSObject>
 - (void) tableViewDidSelectEntry:(Entry *)entry;
+- (void) tableViewDidInitialFetch;
 @end
 
 @interface ListTableViewController : UITableViewController

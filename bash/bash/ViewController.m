@@ -49,4 +49,9 @@
 - (void) tableViewDidSelectEntry:(Entry *)entry {
     [self performSegueWithIdentifier:@"showDetails" sender:entry];
 }
+
+- (void) tableViewDidInitialFetch {
+    self.activityIndicator.hidden = YES;
+    self.containerView.hidden = NO;
+}
 @end
