@@ -40,7 +40,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="N6J-s1-dWG">
+                    <navigationItem key="navigationItem" title="Obczaj to gówno" id="N6J-s1-dWG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQd-QL-iEI">
                             <connections>
                                 <action selector="AddViewTap:" destination="vXZ-lx-hvc" id="5mU-qh-Y92"/>
@@ -166,7 +166,7 @@
                             <constraint firstItem="hp4-kV-sEL" firstAttribute="top" secondItem="XhY-Un-bAD" secondAttribute="bottom" constant="6" id="b8h-d1-JnQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pXE-NU-hjY">
+                    <navigationItem key="navigationItem" title="Zarzuć sucharem" id="pXE-NU-hjY">
                         <barButtonItem key="rightBarButtonItem" style="done" id="zSE-Tu-cFO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="86l-OZ-jE7">
                                 <rect key="frame" x="318" y="114" width="30" height="30"/>
@@ -189,14 +189,18 @@
             </objects>
             <point key="canvasLocation" x="1583" y="-557"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Bash-->
         <scene sceneID="NqL-bd-qd2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="is0-7k-UZv" sceneMemberID="viewController">
+                <navigationController title="Bash" automaticallyAdjustsScrollViewInsets="NO" id="is0-7k-UZv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pGt-EC-d96">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" white="0.0" alpha="0.77000000000000002" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
