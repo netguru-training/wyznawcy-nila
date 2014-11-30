@@ -71,7 +71,7 @@
     if (!_manager) {
         self.manager = [EntriesManager alloc];
     }
-    NSURLSessionTask *task = [self.manager fetch:^(NSArray *posts, NSError *error) {
+    [self.manager fetch:^(NSArray *posts, NSError *error) {
         if (!error) {
             [self.tableView reloadData];
         }
