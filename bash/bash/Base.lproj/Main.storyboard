@@ -153,7 +153,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,7 +167,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pXE-NU-hjY">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="zSE-Tu-cFO">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="zSE-Tu-cFO">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="86l-OZ-jE7">
                                 <rect key="frame" x="318" y="114" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
