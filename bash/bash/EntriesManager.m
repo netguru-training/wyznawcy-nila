@@ -1,11 +1,3 @@
-//
-//  entriesManager.m
-//  bash
-//
-//  Created by Rafał Gawlik on 29.11.2014.
-//  Copyright (c) 2014 netguru-training. All rights reserved.
-//
-
 #import "EntriesManager.h"
 #import "Entry.h"
 
