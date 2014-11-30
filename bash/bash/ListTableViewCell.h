@@ -10,7 +10,7 @@
 #import "Entry.h"
 
 @protocol ListMenuProtocol <NSObject>
-- (void) showMenu:(NSString *)bashBody;
+- (void) showMenu:(Entry *)entry;
 @end
 
 @interface ListTableViewCell : UITableViewCell

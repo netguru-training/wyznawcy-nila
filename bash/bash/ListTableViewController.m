@@ -27,7 +27,7 @@
     [self.manager add:newEntry];
 }
 
-- (void)showMenu:(NSString *)bashBody {
+- (void)showMenu:(Entry *)entry {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Share"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
@@ -35,7 +35,7 @@
     __weak typeof(self) weakSelf = self;
     UIAlertAction* shareMailAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                              [weakSelf displayComposerSheet:bashBody];
+                                                              [weakSelf displayComposerSheet:entry.body];
                                                           }];
 
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
