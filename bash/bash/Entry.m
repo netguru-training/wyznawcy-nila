@@ -12,9 +12,13 @@
 @implementation Entry
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
-    self = [self initWithBody:[attributes valueForKeyPath:@"body"]
-                         user:[attributes valueForKeyPath:@"user_name"]
-                        score:[[attributes valueForKey:@"score"] integerValue]];
+    NSNumber *score = attributes[@"score"];
+    if (!score || [score isKindOfClass:[NSNull class]]) {
+        score = @0;
+    }
+    self = [self initWithBody:attributes[@"body"]
+                         user:attributes[@"user_name"]
+                        score:[score integerValue]];
     return self;
 }
 
