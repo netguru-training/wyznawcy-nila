@@ -106,6 +106,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
     cell.cellBody.text = entry.body;
     cell.cellScore.text = [NSString stringWithFormat:@"%li", (long)entry.score];
+    cell.userNameLabel.text = entry.user;
     cell.delegate = self;
     cell.entry = entry;
     

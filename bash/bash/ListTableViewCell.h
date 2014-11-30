@@ -16,6 +16,7 @@
 @interface ListTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *cellScore;
 @property (weak, nonatomic) IBOutlet UILabel *cellBody;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property id <ListMenuProtocol> delegate;
 @property (strong, nonatomic) Entry *entry;
 @end

@@ -12,7 +12,9 @@
 @implementation Entry
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
-    self = [self initWithBody: [attributes valueForKeyPath:@"body"] user:[attributes valueForKeyPath:@"user"] score:[[attributes valueForKey:@"score"] integerValue]];
+    self = [self initWithBody:[attributes valueForKeyPath:@"body"]
+                         user:[attributes valueForKeyPath:@"user_name"]
+                        score:[[attributes valueForKey:@"score"] integerValue]];
     return self;
 }
 
