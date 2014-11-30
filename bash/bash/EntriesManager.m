@@ -8,6 +8,7 @@
 
 #import "EntriesManager.h"
 #import "Entry.h"
+#import "SlackNotifier.h"
 
 @interface EntriesManager()
 
@@ -25,6 +26,7 @@
 - (void)add:(Entry *)entry {
     NSMutableArray *tempArray = [self.entries mutableCopy];
     [tempArray addObject:entry];
+    [[[SlackNotifier alloc] init] notifyNewEntry:entry];
     self.entries = [tempArray copy];
 }
 

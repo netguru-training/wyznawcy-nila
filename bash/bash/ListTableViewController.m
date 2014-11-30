@@ -38,6 +38,7 @@
                                                           handler:^(UIAlertAction * action) {
                                                               [weakSelf displayComposerSheet:bashBody];
                                                           }];
+
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
     [alert addAction:defaultAction];
