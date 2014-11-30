@@ -1,4 +1,5 @@
 #import "Entry.h"
+#import "ApiClient.h"
 
 @interface Entry()
 
@@ -20,7 +21,7 @@
                          user:attributes[@"user_name"]
                         score:[score integerValue]
                       entryId:[attributes[@"id"] integerValue]
-            
+
             ];
     return self;
 }
@@ -43,11 +44,27 @@
 
 - (instancetype)upvote {
     self.score += 1;
+
+    NSDictionary *parameters = @{@"entry": @{@"score": @1}};
+    NSString *endpoint = [NSString stringWithFormat:@"/entries/%lu.json", self.entryId];
+
+    [[ApiClient sharedClient] PUT:endpoint parameters:parameters success:nil failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+
     return self;
 }
 
 - (instancetype)downvote {
     self.score -= 1;
+
+    NSDictionary *parameters = @{@"entry": @{@"score": @-1}};
+    NSString *endpoint = [NSString stringWithFormat:@"/entries/%lu.json", self.entryId];
+
+    [[ApiClient sharedClient] PUT:endpoint parameters:parameters success:nil failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+
     return self;
 }
 
