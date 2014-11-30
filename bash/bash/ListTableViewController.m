@@ -18,6 +18,8 @@
 @property (strong, nonatomic) EntriesManager *manager;
 
 - (void)updateCell:(ListTableViewCell *)cell;
+- (void)getLatestData;
+- (void)pullDownRefresh;
 @end
 
 @implementation ListTableViewController
@@ -83,9 +85,31 @@
 }
 
 - (void)viewDidLoad {
+    // Initialize the refresh control.
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(pullDownRefresh)
+                  forControlEvents:UIControlEventValueChanged];
+    
     if (!_manager) {
         self.manager = [EntriesManager alloc];
     }
+    
+    [self getLatestData];
+    [super viewDidLoad];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)pullDownRefresh {
+    [self getLatestData];
+    [self.refreshControl endRefreshing];
+}
+
+- (void)getLatestData {
     [self.manager fetch:^(NSArray *posts, NSError *error) {
         [self.delegate tableViewDidInitiateFetch];
         if (!error) {
@@ -93,13 +117,6 @@
             [self.delegate tableViewDidFinishFetch];
         }
     }];
-
-    [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
