@@ -28,7 +28,7 @@
     [self.manager add:newEntry];
 }
 
-- (void)showMenu {
+- (void)showMenu:(NSString *)bashBody {
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Share"
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
@@ -36,7 +36,7 @@
     __weak typeof(self) weakSelf = self;
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"E-mail" style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                              [weakSelf displayComposerSheet];
+                                                              [weakSelf displayComposerSheet:bashBody];
                                                           }];
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
@@ -84,11 +84,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     Entry *entry = [self.manager.entries objectAtIndex:indexPath.row];
     cell.textLabel.text = entry.body;
     cell.delegate = self;
+    cell.entry = entry;
     
     return cell;
 }
 
--(void)displayComposerSheet {
+-(void)displayComposerSheet:(NSString *) bashBody {
     if (![MFMailComposeViewController canSendMail]) {
         return;
     }
@@ -99,8 +100,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     [picker setSubject:@"Here's a cool BashGuru link for you!"];
     
     // Fill out the email body text.
-    NSString *emailBody = @"It is raining in sunny California!";
-    [picker setMessageBody:emailBody isHTML:NO];
+    [picker setMessageBody:bashBody isHTML:NO];
     
     // Present the mail composition interface.
     [self presentViewController:picker animated:YES completion:nil];
