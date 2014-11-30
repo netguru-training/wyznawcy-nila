@@ -17,7 +17,7 @@
 
 @implementation AddViewController
 - (IBAction)addTap:(id)sender {
-    if (self.bodyText.text.length == 0) {
+    if (self.bodyText.text.length == 0 || [self.bodyText.text isEqualToString:@"Write something..."]) {
         
         
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Uncool!"
