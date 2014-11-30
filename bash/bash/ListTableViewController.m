@@ -19,7 +19,6 @@
 
 - (void)updateCell:(ListTableViewCell *)cell;
 - (void)getLatestData;
-- (void)pullDownRefresh;
 @end
 
 @implementation ListTableViewController
@@ -88,7 +87,7 @@
     // Initialize the refresh control.
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
-                            action:@selector(pullDownRefresh)
+                            action:@selector(getLatestData)
                   forControlEvents:UIControlEventValueChanged];
     
     if (!_manager) {
@@ -104,17 +103,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)pullDownRefresh {
-    [self getLatestData];
-    [self.refreshControl endRefreshing];
-}
-
 - (void)getLatestData {
     [self.manager fetch:^(NSArray *posts, NSError *error) {
         [self.delegate tableViewDidInitiateFetch];
         if (!error) {
             [self.tableView reloadData];
             [self.delegate tableViewDidFinishFetch];
+            [self.refreshControl endRefreshing];
         }
     }];
 }
