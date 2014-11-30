@@ -11,7 +11,7 @@
 #import "EntriesManager.h"
 #import <MessageUI/MessageUI.h>
 
-@interface ListTableViewController ()
+@interface ListTableViewController () <ListMenuProtocol>
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) EntriesManager *manager;
 @end

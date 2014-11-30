@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ListTableItemTableViewCell.h"
 
-@interface ListTableViewController : UITableViewController <ListMenuProtocol>
+@interface ListTableViewController : UITableViewController
 - (void)addEntry: (NSString *) body;
 @end
