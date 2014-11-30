@@ -17,7 +17,13 @@
 @implementation AddViewController
 - (IBAction)addTap:(id)sender {
     if (self.bodyText.text.length == 0) {
-        [[[UIAlertView alloc] initWithTitle:@"Entry text" message: @"Please write text before adding a new element.\nFor instance 'dupa'" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil, nil] show];
+        [[[UIAlertView alloc] initWithTitle:@"Entry text"
+                                    message:@"Please write text before adding a new element.\nFor instance 'dupa'"
+                                   delegate:nil
+                          cancelButtonTitle:@"Ok"
+                          otherButtonTitles:nil, nil
+          ]
+         show];
         return;
     }
     [self.tableController addEntry:self.bodyText.text user:self.userName.text];
