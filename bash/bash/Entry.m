@@ -18,22 +18,33 @@
     }
     self = [self initWithBody:attributes[@"body"]
                          user:attributes[@"user_name"]
-                        score:[score integerValue]];
+                        score:[score integerValue]
+                      entryId:[attributes[@"id"] integerValue]
+            
+            ];
     return self;
 }
 
-- (instancetype)initWithBody:(NSString *)body user:(NSString *)user score:(NSInteger)score{
+- (instancetype)initWithBody:(NSString *)body
+                        user:(NSString *)user
+                       score:(NSInteger)score
+                     entryId:(NSInteger)entryId
+{
     self = [super init];
     if (!self) {
         return nil;
     }
     self.user = user;
     self.body = body;
+    self.score = score;
+    self.entryId = entryId;
     return self;
 }
 
 - (instancetype)upvote {
-    self.score += 1;
+
+    NSString *a = [NSString stringWithFormat:@"%li", (long)self.entryId];
+    NSLog(a);
     return self;
 }
 

@@ -8,7 +8,7 @@
 @property (nonatomic, assign, readwrite) NSInteger entryId;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
-- (instancetype)initWithBody:(NSString *) body user:(NSString *) user score:(NSInteger) score;
+- (instancetype)initWithBody:(NSString *) body user:(NSString *) user score:(NSInteger) score entryId:(NSInteger)entryId;
 - (instancetype)upvote;
 - (instancetype)downvote;
 @end

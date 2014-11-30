@@ -31,7 +31,8 @@
     [[[SlackNotifier alloc] init] notifyNewEntry:entry];
     self.entries = [tempArray copy];
     return [[ApiClient sharedClient] POST:@"/entries.json" parameters:parameters success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        NSArray *entryFromResponse = JSON;
+        NSDictionary *entryFromResponse = JSON;
+        entry.entryId = [entryFromResponse[@"id"] integerValue];
         
         if (block) {
             block(self.entries, nil);

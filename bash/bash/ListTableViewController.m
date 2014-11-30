@@ -35,7 +35,7 @@
         self.manager = [EntriesManager alloc];
     }
     __weak typeof(self) weakSelf = self;
-    Entry *newEntry = [[Entry alloc] initWithBody:body user:user score:0];
+    Entry *newEntry = [[Entry alloc] initWithBody:body user:user score:0 entryId:nil];
     [self.manager add:newEntry completion:^(NSArray *entry, NSError *error) {
         if (!error) {
             [weakSelf.tableView reloadData];
