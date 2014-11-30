@@ -28,7 +28,7 @@
 }
 
 - (void)showMenu:(Entry *)entry {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Share"
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil
                                                                    message:nil
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -40,6 +40,19 @@
 
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                           handler:^(UIAlertAction * action) {}];
+    
+    UIAlertAction* upvoteAction = [UIAlertAction actionWithTitle:@"Upvote" style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction * action) {
+                                                                [entry upvote];
+                                                                [weakSelf.tableView reloadData];
+                                                            }];
+    UIAlertAction* downvoteAction = [UIAlertAction actionWithTitle:@"Downvote" style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {
+                                                             [entry downvote];
+                                                             [weakSelf.tableView reloadData];
+                                                         }];
+    [alert addAction:upvoteAction];
+    [alert addAction:downvoteAction];
     [alert addAction:shareMailAction];
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];

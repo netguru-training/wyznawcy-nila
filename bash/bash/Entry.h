@@ -8,4 +8,6 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 - (instancetype)initWithBody:(NSString *) body user:(NSString *) user score:(NSInteger) score;
+- (instancetype)upvote;
+- (instancetype)downvote;
 @end
