@@ -42,9 +42,7 @@
 }
 
 - (instancetype)upvote {
-
-    NSString *a = [NSString stringWithFormat:@"%li", (long)self.entryId];
-    NSLog(a);
+    self.score += 1;
     return self;
 }
 
